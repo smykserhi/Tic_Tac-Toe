@@ -26,7 +26,7 @@ Requirements:
 
 * After clicking the 'start' button the program have to aks the players their names. The program has to validate the inputs in case they are empties
 
-<img src="./src/images/finalLook/inputs.png">
+<img src="./src/images/finalLook/inputs.png" width:"100px">
 
 * After the inputs the program displays the board game with the players names and 2 button. 'Reset' and 'New Game':
 
