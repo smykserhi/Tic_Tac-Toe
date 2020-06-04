@@ -54,4 +54,8 @@ those are the component we think are fundamentals for the development of the gam
 
 We also provided you with a set of images you need in the folder **images** and a group of css rules in the file **index.css**. We added Bootstrap CDN which means you can use bootstrap classes. You can create your own css style and images.
 
+
+Create issues on the link below on the parent repo if you are stuck and want to talk about it. You can paste code, tag people and refer to other issues there. Please use it! It will be helpful for mentors and future students to see where common problems are. Link here: https://github.com/Code-the-Dream-School/Front-end-React-week-1/issues
+
+
 Happy coding!!
