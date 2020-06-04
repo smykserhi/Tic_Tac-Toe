@@ -6,7 +6,7 @@ We have the folder setted up for you.
 
 In the project directory, you need to run:
 
-##`npm install`
+## `npm install`
 
 download the dependencies
 
