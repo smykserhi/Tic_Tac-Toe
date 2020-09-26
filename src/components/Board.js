@@ -1,10 +1,16 @@
 import React, {Component}  from 'react';
+import Logo from "./Logo"
 
 
 class Board extends Component {
 
   render(){
-      return();
+      return(
+        <div className="container niceFont center">
+          <Logo/>
+          <h2>Board here</h2>
+        </div>
+      );
   }
 }
 
