@@ -4,11 +4,11 @@ import O from "../images/0.png"
 
  const BoardElemt = (props)=>
  {
-     if(props.el === 1){
+     if(props.el === "X"){
         return (            
             <div className="playItem" id ={props.index} onClick={props.handelClick}><img className="icon" src={X} alt="O"/></div>
         )
-     }else if(props.el === 0){
+     }else if(props.el === "O"){
         return (            
             <div className="playItem" id ={props.index} onClick={props.handelClick}><img className="icon" src={O} alt="O"/></div>
         )

@@ -74,6 +74,7 @@ flex-wrap: nowrap;
   margin-bottom: 2%;
   width: 100%;
   height: 60%;  
+  padding: 20px;
 }
 
 .logo{  
@@ -93,12 +94,12 @@ flex-wrap: nowrap;
 
 }
 .players,
-.buttons{
-  
+.buttons{  
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  
 }
 .players{
   align-self: flex-start;
@@ -118,15 +119,29 @@ flex-wrap: nowrap;
 }
 .playItem{
   width: 100px;
-  height: 100px;
-  
+  height: 100px;  
   margin: 10px;
   border: black 2px solid;
-  border-radius: 15px;
-  
+  border-radius: 15px;  
+}
+.playItem:hover{
+  background-color: rgb(135, 204, 250);
 }
 .playItem img{
   padding: 15px;
   width: inherit;
   height: auto;
+}
+
+.winer{  
+  background-color: aliceblue;
+}
+.active{
+  background-color: rgb(135, 204, 250);
+  padding: 10px;
+  border-radius: 10px;
+}
+.noActive{
+  padding: 10px;
+  border-radius: 10px;
 }

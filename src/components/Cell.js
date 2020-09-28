@@ -14,8 +14,7 @@ render(){
           index={index}
           key = {index}
           handelClick = {this.props.handelClick}
-        />        
-        
+        />  
       )}
       
     </div>

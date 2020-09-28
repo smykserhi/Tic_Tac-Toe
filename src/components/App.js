@@ -10,7 +10,8 @@ state = {
   name_0 :"",
   name_X :"",
   board: [" "," "," "," "," "," "," "," "," "],
-  currentPlayer: 1
+  currentPlayer: "X",
+  winer: "no"
 
 }
 checkWiner = ()=>{
@@ -25,7 +26,11 @@ checkWiner = ()=>{
       (board[1] === currentPlayer && board[4] === currentPlayer && board[7] === currentPlayer) ||
       (board[2] === currentPlayer && board[5] === currentPlayer && board[8] === currentPlayer)  
   ){
-    console.log(this.state.currentPlayer, "win")
+    this.setState(()=>{
+      return{
+        winer : this.state.currentPlayer
+      }
+    })
   }
 }
 startNewGame = ()=>{
@@ -34,14 +39,18 @@ startNewGame = ()=>{
       gameStarted : false,
       board: [" "," "," "," "," "," "," "," "," "],
       name_0 :"",
-      name_X :""
+      name_X :"",
+      winer: "no",
+      currentPlayer: "X",
     }
   })
 }
 resetBoard = ()=>{
   this.setState(()=>{
     return{
-      board: [" "," "," "," "," "," "," "," "," "]
+      board: [" "," "," "," "," "," "," "," "," "],
+      winer: "no",
+      currentPlayer: "X"
     }
   })
 }
@@ -61,22 +70,23 @@ saveNames = (name_0, name_X)=>{
   })
 }
 handelClick =(e) =>{
-  console.log(e.target.id)
   let newboard = this.state.board
-  newboard[e.target.id] = this.state.currentPlayer
-  this.setState(()=>({
-    board: newboard
-  }))
-  this.checkWiner()
-  if(this.state.currentPlayer === 1){
+  if(newboard[e.target.id] === " "){
+    newboard[e.target.id] = this.state.currentPlayer
     this.setState(()=>({
-      currentPlayer : 0
+      board: newboard
     }))
-  }else {
-    this.setState(()=>({
-      currentPlayer : 1
-    }))
-  }
+    this.checkWiner()
+    if(this.state.currentPlayer === "X"){
+      this.setState(()=>({
+        currentPlayer : "O"
+      }))
+    }else {
+      this.setState(()=>({
+        currentPlayer : "X"
+      }))
+    }
+  } 
 }
   render(){
     if(this.state.gameStarted){
@@ -89,6 +99,8 @@ handelClick =(e) =>{
             handelClick = {this.handelClick}
             startNewGame = {this.startNewGame}
             resetBoard = {this.resetBoard}
+            winer = {this.state.winer}
+            currentPlayer={this.state.currentPlayer}
           />
         )
       }else{ // if game started but name didn't set up
