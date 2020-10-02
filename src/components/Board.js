@@ -5,8 +5,7 @@ import Buttons from "./Buttons"
 import Cell from "./Cell"
 import Winer from "./Winer"
 
-class Board extends Component {
-
+class Board extends Component {  
   render(){
     if(this.props.winer === "no"){
       return(

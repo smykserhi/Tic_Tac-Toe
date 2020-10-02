@@ -2,6 +2,8 @@ import React from "react"
 import X from "../images/1.png"
 import O from "../images/0.png"
 
+
+
  const BoardElemt = (props)=>
  {
      if(props.el === "X"){
@@ -19,5 +21,6 @@ import O from "../images/0.png"
      }
         
  }
+ 
  
  export default BoardElemt
