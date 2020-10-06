@@ -1,26 +1,29 @@
 import React, {Component}  from 'react';
 import BoardElemt from './BoardElement';
+import {Consumer} from "../Context"
 
 
 
-class  Cell extends Component {
-
-render(){
+const Cell =()=> {
   return(
-    <div className="playField">
-      {this.props.board.map((el, index)=>       
-         <BoardElemt 
-          el={el}
-          index={index}
-          key = {index}
-          handelClick = {this.props.handelClick}
-        />  
-      )}
-      
-    </div>
-    
+    <Consumer>
+      {context=>{
+        return(
+          <div className="playField">
+            {context.data.board.map((el, index)=>       
+              <BoardElemt 
+                el={el}
+                index={index}
+                key = {index}
+                handelClick = {context.actions.handelClick}
+              />  
+            )}      
+          </div>    
+        )
+      }}
+    </Consumer>    
   );
   }
 
-}
+
 export default Cell;

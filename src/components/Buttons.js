@@ -1,13 +1,22 @@
 import React from "react"
 import Button from "react-bootstrap/Button"
+import {Consumer} from "../Context"
+import {Link} from "react-router-dom"
 
 
 const Buttons = (props)=>{
     return(
-        <div className="buttons">
-            <Button variant="dark" onClick={props.startNewGame}>New Game</Button>{' '} 
-            <Button variant="dark" onClick = {props.resetBoard}>Reset</Button>{' '} 
-        </div>
+        <Consumer>
+            {context =>{
+                return(
+                    <div className="buttons">
+                        <Link to="/"><Button variant="dark" onClick={context.actions.startNewGame}>New Game</Button>{' '} </Link>
+                        <Button variant="dark" onClick = {context.actions.resetBoard}>Reset</Button>{' '} 
+                    </div>
+                )
+            }}
+        </Consumer>
+        
         
     )
 }
