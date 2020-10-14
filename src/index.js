@@ -8,7 +8,7 @@ import {BrowserRouter} from "react-router-dom"
 
 
 ReactDOM.render(
-  <BrowserRouter>
+  <BrowserRouter basename="Tic">
     <Provider >      
       <App/>
     </Provider>
