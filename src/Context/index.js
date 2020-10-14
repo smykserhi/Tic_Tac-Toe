@@ -1,4 +1,5 @@
 import React , {Component} from "react"
+import { useHistory } from "react-router-dom";
 
 const GameContext = React.createContext()
 
@@ -29,6 +30,7 @@ export class Provider extends Component{
               winer : this.state.currentPlayer
             }
           })
+          
         }else {
           let counter = 0
           this.state.board.map(el =>{
@@ -83,8 +85,8 @@ export class Provider extends Component{
           }
         })
       }
-      handelClick =(e) =>{
-        let newboard = this.state.board  
+      handelClick =(e) =>{       
+        let newboard = this.state.board         
         if(newboard[e.target.id] === "z"){
           newboard[e.target.id] = this.state.currentPlayer
           this.setState(()=>({
